@@ -37,6 +37,9 @@ Vue.component(Swipe.name, Swipe)
 Vue.component(SwipeItem.name, SwipeItem)
 Vue.component(Button.name, Button)
 
+import {Lazyload} from 'mint-ui'
+Vue.use(Lazyload)
+
 
 // 导入自己的 router.js 路由模块
 import router from './router.js'
