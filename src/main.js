@@ -17,7 +17,9 @@ import VueResource from 'vue-resource'
 Vue.use(VueResource)
 
 Vue.http.options.root = 'http://www.lovegf.cn:8899/'
-Vue.config.productionTip = false
+// Vue.config.productionTip = false
+
+Vue.http.options.emulateJSON = true
 
 
 // 导入 MUI 的样式
