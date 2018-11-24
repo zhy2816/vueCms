@@ -5,7 +5,7 @@
         <textarea placeholder="请输入要BB的内容（做多吐槽120字）" maxlength="120" v-model="msg"></textarea>
         <mt-button type="primary" size="large" @click="postComment">发表评论</mt-button>
         <div class="comment-list">
-            <div class="comment-item" v-for="(item, i) in comments" :key="item.add_time">
+            <div class="comment-item" v-for="(item, i) in comments" :key="i">
                 <div class="comment-title">
                     第{{ i+1 }}楼&nbsp;&nbsp;用户：{{ item.user_name }}&nbsp;&nbsp;发表时间：{{ item.add_time | dateFormat }}
                 </div>
