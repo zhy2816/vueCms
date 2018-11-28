@@ -3,8 +3,8 @@ import VueRouter from 'vue-router'
 // 导入对应的路由组件
 import homeContainer from './pages/home/index.vue'
 import memberContainer from './pages/member/index.vue'
-import shopcarContainer from './pages/search/index.vue'
-import searchContainer from './pages/shopcar/index.vue'
+import shopcarContainer from './pages/shopcar/index.vue'
+import searchContainer from './pages/search/index.vue'
 
 import newsList from './pages/newsList/index.vue'
 import newsInfo from './pages/newsInfo/index.vue'
