@@ -24,8 +24,7 @@
                     <p class="price">
                         市场价：<del>￥{{ goodsinfo.market_price }}</del>&nbsp;&nbsp;销售价：<span class="now_price">￥{{ goodsinfo.sell_price }}</span>
                     </p>
-                    <p style="display: inline-block;">购买数量：</p>
-                    <numbox @getcount="getSelectedCount" :max="goodsinfo.stock_quantity"></numbox>
+                    <p>购买数量：<numbox @getcount="getSelectedCount" :max="goodsinfo.stock_quantity"></numbox></p>
                     <!-- <div class="mui-numbox" data-numbox-min="1">
                         <button @click="num--" class="mui-btn mui-btn-numbox-minus" type="button">-</button>
                             <input v-model="num" id="test" class="mui-input-numbox" type="number" value="">
@@ -44,15 +43,14 @@
             <div class="mui-card-header">商品参数</div>
             <div class="mui-card-content">
                 <div class="mui-card-content-inner">
-                <p>商品货号：{{ goodsinfo.goods_no }}</p>
-                <p>库存情况：{{ goodsinfo.stock_quantity }}件</p>
-                <p>上架时间：{{ goodsinfo.add_time | dateFormat }}</p>
+                    <p>商品货号：{{ goodsinfo.goods_no }}</p>
+                    <p>库存情况：{{ goodsinfo.stock_quantity }}件</p>
+                    <p>上架时间：{{ goodsinfo.add_time | dateFormat }}</p>
                 </div>
             </div>
             <div class="mui-card-footer">
                 <mt-button type="primary" size="large" plain @click="goDesc(id)">图文介绍</mt-button>
                 <mt-button type="danger" size="large" plain @click="goComment(id)">商品评论</mt-button>
-                <cmt-box :id="id">商品</cmt-box>
             </div>
         </div>
     </div>
@@ -66,7 +64,7 @@ import numbox from "../../components/goodsinfo_numbox/index.vue"
 export default {
     data() {
         return {
-            num: 1,
+            // num: 1,
             id: this.$route.params.id,
             lunbotu: [],
             goodsinfo: {},
@@ -166,7 +164,7 @@ export default {
     .mui-card-footer {
         display: block;
         button {
-        margin: 15px 0;
+            margin: 15px 0;
         }
     }
 
@@ -177,8 +175,8 @@ export default {
         background-color: red;
         position: absolute;
         z-index: 99;
-        top: 410px;
-        left: 152px;
+        top: 382px;
+        left: 148px;
     }
 }
 </style>

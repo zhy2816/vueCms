@@ -53,7 +53,7 @@ export default {
         getPhotoListByCateId(cateId) {
             this.$http.get("api/getimages/" + cateId).then(result => {
                 if (result.body.status === 0) {
-                this.list = result.body.message;
+                    this.list = result.body.message;
                 }
             });
         }
@@ -62,6 +62,9 @@ export default {
 </script>
 
 <style lang="less">
+* {
+    touch-action: pan-y;
+}
 
 .photoList-content {
     .photo-list {

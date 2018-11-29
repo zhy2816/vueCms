@@ -1,7 +1,11 @@
 <template>
   <div class="app-container">
     <!-- 头部 -->
-    <mt-header fixed title="vueCms"></mt-header>
+    <mt-header fixed title="vueCms">
+		<span slot="left" @click="goBack" v-show="flag">
+        	<mt-button icon="back">返回</mt-button>
+      	</span>
+	</mt-header>
 
     <!-- 底部tabBar -->
     <nav class="mui-bar mui-bar-tab">
@@ -34,6 +38,31 @@
 </template>
 
 <script>
+export default {
+  data() {
+    return {
+      flag: false
+    };
+  },
+  created() {
+    this.flag = this.$route.path === "/home" ? false : true;
+  },
+  methods: {
+    goBack() {
+      // 点击后退
+      this.$router.go(-1);
+    }
+  },
+  watch: {
+    "$route.path": function(newVal) {
+      if (newVal === "/home") {
+        this.flag = false;
+      } else {
+        this.flag = true;
+      }
+    }
+  }
+};
 </script>
 
 <style lang="less" scoped>
